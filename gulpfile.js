@@ -79,3 +79,8 @@ gulp.task(
   "default",
   gulp.parallel("styles", "scripts", "content", "images", "watch", "browserSync")
 );
+
+gulp.task(
+  "build",
+  gulp.parallel("styles", "scripts", "content", "images")
+)
