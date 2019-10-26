@@ -6,6 +6,8 @@ var concatify = require("gulp-concat");
 var sourcemaps = require("gulp-sourcemaps");
 var minifyhtml = require("gulp-minify-html");
 
+var dist = './public'
+
 // Paths to various files
 var paths = {
   scripts: ["source/js/*.js"],
@@ -19,7 +21,7 @@ gulp.task("styles", function() {
   return gulp
     .src(paths.styles)
     .pipe(minifycss({ compatibility: "ie8" }))
-    .pipe(gulp.dest("./build/css/"));
+    .pipe(gulp.dest(dist + "/css/"));
 });
 
 // Concats & minifies js files and outputs them to build/js/app.js
@@ -30,7 +32,7 @@ gulp.task("scripts", function() {
     .pipe(uglify())
     .pipe(concatify("app.js"))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./build/js/"));
+    .pipe(gulp.dest(dist + "/js/"));
 });
 
 // Minifies our HTML files and outputs them to build/*.html
@@ -43,12 +45,12 @@ gulp.task("content", function() {
         quotes: true
       })
     )
-    .pipe(gulp.dest("./build"));
+    .pipe(gulp.dest(dist));
 });
 
 // Optimizes our image files and outputs them to build/image/*
 gulp.task("images", function() {
-  return gulp.src(paths.images).pipe(gulp.dest("./build/images/"));
+  return gulp.src(paths.images).pipe(gulp.dest(dist + "/images/"));
 });
 
 // Watches for changes to our files and executes required scripts
@@ -63,13 +65,13 @@ gulp.task("watch", function() {
 gulp.task("browserSync", function() {
   browserSync.init({
      server: {
-        baseDir: "./build",
+        baseDir: dist,
      }
    });
 
-  gulp.watch("./build/*.html").on('change', browserSync.reload);
-  gulp.watch("./build/js/*.js").on('change', browserSync.reload);
-  gulp.watch("./build/css/*.css").on('change', browserSync.reload);
+  gulp.watch(dist + "/*.html").on('change', browserSync.reload);
+  gulp.watch(dist + "/js/*.js").on('change', browserSync.reload);
+  gulp.watch(dist + "/css/*.css").on('change', browserSync.reload);
 
 });
 
