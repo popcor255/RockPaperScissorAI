@@ -1,2 +1,3 @@
-# Gulp-Template-4.0-
-## This is a Template
+# RockPaperScissorAI
+
+## This is a CS400 RockPaperScissorAI project
