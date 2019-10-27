@@ -1,9 +1,10 @@
-
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
     "rock paper scissor shoot": function() {
       var computer_move = document.getElementById("computer_move");
+      //label variable from videoAI.js
+      document.getElementById("player_move").innerText = label;
       computer_move.innerText = randomMove();
       updateScoreboard();
       console.log("moved made!");

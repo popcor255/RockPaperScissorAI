@@ -1,4 +1,5 @@
 var video;
+var label;
 var currentPrediction;
 var classifier;
 
@@ -32,7 +33,6 @@ function gotResults(error, results) {
     } else {
       //console.log(results);
       label = results[0].label;
-      document.getElementById("player_move").innerText = label;
       classifier.predict(gotResults);
     }
 
