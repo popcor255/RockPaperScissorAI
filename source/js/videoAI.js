@@ -1,5 +1,5 @@
 var video;
-var label;
+var label = 'loading model';
 var currentPrediction;
 var classifier;
 
@@ -23,11 +23,18 @@ function draw(){
 
 function modelReady() {
   console.log('Model is ready!!!');
+  classifier.load('model.json', customModelReady);
   classifier.predict(gotResults);
 }
-  
+
+function customModelReady(){
+  console.log('Custom Model is ready!!!');
+  label = 'model ready';
+  classifier.classify(gotResults);
+}
+
 function gotResults(error, results) {
-   
+
     if (error) {
       console.error(error);
     } else {
@@ -37,4 +44,3 @@ function gotResults(error, results) {
     }
 
 }
-  
