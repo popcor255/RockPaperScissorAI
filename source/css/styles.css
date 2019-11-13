@@ -15,3 +15,57 @@
     vertical-align:middle;
     text-align:center;
 }
+
+body {
+  background-color: #292C34;
+}
+
+header {
+  background: white;
+  padding: 20px;
+}
+
+header > h1 {
+  color: #25272E;
+  text-align: center;
+  font-family: Asap, sans-serif;
+}
+
+.bold {
+  border: 3px solid white;
+  width: 200px;
+  margin: 20px auto;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 15px 20px;
+  font-family: Asap, sans-serif;
+  position: relative;
+}
+
+h3 {
+  border: 3px solid white;
+  width: 200px;
+  margin: 20px auto;
+  color: white;
+  font-size: 15px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 15px 20px;
+  font-family: Asap, sans-serif;
+  position: relative;
+}
+
+h4 {
+  border: 3px solid white;
+  width: 200px;
+  margin: 20px auto;
+  color: white;
+  font-size: 10px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 15px 20px;
+  font-family: Asap, sans-serif;
+  position: relative;
+}
