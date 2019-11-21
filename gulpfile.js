@@ -82,10 +82,10 @@ gulp.task("browserSync", function() {
 
 gulp.task(
   "default",
-  gulp.parallel("styles", "scripts", "content", "images", "watch", "browserSync")
+  gulp.parallel("json", "styles", "scripts", "content", "images", "watch", "browserSync")
 );
 
 gulp.task(
   "build",
-  gulp.parallel("styles", "scripts", "content", "images")
+  gulp.parallel("json", "styles", "scripts", "content", "images")
 )
