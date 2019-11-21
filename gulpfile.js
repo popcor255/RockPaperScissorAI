@@ -11,6 +11,7 @@ var dist = './public'
 // Paths to various files
 var paths = {
   scripts: ["source/js/*.js"],
+  json : ["source/js/*.json"],
   styles: ["source/css/**/*.css"],
   images: ["source/images/**/*"],
   content: ["source/index.html"]
@@ -24,12 +25,20 @@ gulp.task("styles", function() {
     .pipe(gulp.dest(dist + "/css/"));
 });
 
-// Concats & minifies js files and outputs them to build/js/app.js
+// moves js files and outputs them to build/js/app.js
 gulp.task("scripts", function() {
   return gulp
     .src(paths.scripts)
     .pipe(gulp.dest(dist + "/js/"));
 });
+
+// moves json file to dest in js folder
+gulp.task("json", function() {
+  return gulp
+    .src(paths.json)
+    .pipe(gulp.dest(dist + "/js/"));
+});
+
 
 // Minifies our HTML files and outputs them to build/*.html
 gulp.task("content", function() {
