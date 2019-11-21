@@ -3,11 +3,9 @@ var player_score;
 var computer_score;
 var player_move;
 var computer_move;
-var scoreboard;
+var scoreboard = { "player" : 0, "computer" : 0};
 
 function reset(){
-    player_score = document.getElementById("p_score");
-    computer_score = document.getElementById("c_score");
     scoreboard = { "player" : 0, "computer" : 0};
 }
 
@@ -21,16 +19,14 @@ function randomMove(){
         return "paper";
     }
     
-    return "scissor";
+    return "scissors";
 }
 
 function updateScoreboard(){
+    player_score = document.getElementById("p_score");
+    computer_score = document.getElementById("c_score"); 
     player_score.innerText = scoreboard["player"];
     computer_score.innerText = scoreboard["computer"];
-}
-
-window.onload = function (){
-    reset();
 }
 
 function getRandomInt(max) {
