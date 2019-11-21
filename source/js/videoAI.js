@@ -12,7 +12,7 @@ function setup(){
 
     background(51);
     video = createCapture(VIDEO);
-    classifier = ml5.imageClassifier('MobileNet', video, modelReady);
+    //classifier = ml5.imageClassifier('MobileNet', video, modelReady);
     video.hide();
     cnv.position(x, 0);
 }
