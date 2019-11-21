@@ -28,10 +28,6 @@ gulp.task("styles", function() {
 gulp.task("scripts", function() {
   return gulp
     .src(paths.scripts)
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(concatify("app.js"))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest(dist + "/js/"));
 });
 
