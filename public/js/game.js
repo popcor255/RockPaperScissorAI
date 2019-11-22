@@ -22,9 +22,11 @@ function randomMove(){
     return "scissors";
 }
 
-function updateScoreboard(){
+function updateScoreboard(c_score, p_score){
     player_score = document.getElementById("p_score");
     computer_score = document.getElementById("c_score"); 
+    scoreboard["player"] += p_score;
+    scoreboard["computer"] += c_score;
     player_score.innerText = scoreboard["player"];
     computer_score.innerText = scoreboard["computer"];
 }

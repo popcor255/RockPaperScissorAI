@@ -24,15 +24,73 @@ window.onload = function() {
   var commandHello = {
       indexes:["rock paper scissors shoot", "rock paper scissors shoot"], // These spoken words will trigger the execution of the command
       action:function(){ // Action to be executed when a index match with spoken word
-        var computer_move = document.getElementById("computer_move");
+        var computer_label = document.getElementById("computer_move");
         //label variable from videoAI.js
-        document.getElementById("player_move").innerText = label;
-        var move = randomMove();
-        computer_move.innerText = move;
-        updateScoreboard();  
-        artyom.say("I played " + move);
+        var computer_move = randomMove();
+        var player_move = getPlayerMove();
+        var doesPlayerWin = judge(computer_move, player_move);
+        
+        if(doesPlayerWin == 1){
+          updateScoreboard(1, 0);
+        }
+        else if(doesPlayerWin == -1){
+          updateScoreboard(0, 1);
+        }
+        else if(doesPlayerWin == 0){
+          updateScoreboard(0, 0);
+        }
+
+        computer_label.innerText = computer_move;
+        artyom.say("I played " + computer_move);
       }
   };
 
   artyom.addCommands(commandHello);
+}
+
+function judge(computer, player){
+
+  var permutations = [[player,computer], [computer, player]];
+
+  for(var i = 0; i < permutations.length; i++){
+    var p1 = permutations[i][0];
+    var p2 = permutations[i][1];
+    var isHuman = i ? 1 : -1;
+
+    if(p1 == "scissors"){
+      if(p2 == "rock"){
+        return 1 * isHuman;
+      }
+      else if(p2 == "paper"){
+        return -1 * isHuman;
+      }
+      else{
+        return 0;
+      }
+    }
+
+    if(p1 == "rock"){
+      if(p2 == "paper"){
+        return 1 * isHuman;
+      }
+      else if(p2 == "scissors"){
+        return -1 * isHuman;
+      }
+      else{
+        return 0;
+      }
+    }
+
+    if(p1 == "paper"){
+      if(p2 == "scissors"){
+        return 1 * isHuman;
+      }
+      else if(p2 == "rock"){
+        return -1 * isHuman;
+      }
+      else{
+        return 0;
+      }
+    }
+  }
 }

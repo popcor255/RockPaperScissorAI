@@ -1,7 +1,7 @@
 // Classifier Variable
-let classifier;
+var classifier;
 // Model URL
-let imageModelURL = 'https://teachablemachine.withgoogle.com/models/H5UH_cjV/';
+var imageModelURL = 'https://teachablemachine.withgoogle.com/models/H5UH_cjV/';
 
 // Video
 var video;
@@ -15,8 +15,8 @@ function preload() {
 }
 
 function setup() {
-  var width  = 640;
-  var height = 480;
+  var width  = 640 / 2;
+  var height = 480 / 2;
   var x = ((windowWidth - width) / 2);
   var y = (windowHeight - height) / 2;
   var cnv = createCanvas(width, height);
@@ -61,5 +61,10 @@ function gotResult(error, results) {
   // console.log(results[0]);
   label = results[0].label;
   // Classifiy again!
+  document.getElementById("player_move").innerText = label;
   classifyVideo();
+}
+
+function getPlayerMove(){
+  return label;
 }
