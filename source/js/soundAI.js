@@ -34,7 +34,7 @@ window.onload = function() {
    */
   // Add a single command
   var speechCommands = {
-      indexes:["rock paper scissors shoot", "rock paper scissors shoot"], // These spoken words will trigger the execution of the command
+      indexes:["rock paper scissors shoot", "rock paper scissors shoe"], // These spoken words will trigger the execution of the command
       action: function(){ // Action to be executed when a index match with spoken word
         var computer_label = document.getElementById("computer_move");
         //label variable from videoAI.js
