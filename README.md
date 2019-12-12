@@ -14,7 +14,7 @@ Hardware requirements: Chrome, Active Internet, webcam, and microphone
 
 ### Step 3) Give permission for the microphone
 
-![enter image description here](https://media.giphy.com/media/PlfsoReDtWlKj6LYhr/giphy.gif)
+![enter image description here](https://media.giphy.com/media/RMAoprucSjtrw10VkF/giphy.gif)
 
 ### Step 4) Make a gesture with your hand in front of the webcam
 ![enter image description here](https://media.giphy.com/media/XH4yjaxirh7qR4ZHwK/giphy.gif)
