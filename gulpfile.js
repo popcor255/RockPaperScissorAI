@@ -5,6 +5,7 @@ var uglify = require("gulp-uglify");
 var concatify = require("gulp-concat");
 var sourcemaps = require("gulp-sourcemaps");
 var minifyhtml = require("gulp-minify-html");
+var jsdoc = require('gulp-jsdoc3');
 
 var dist = './public'
 
@@ -16,6 +17,11 @@ var paths = {
   images: ["source/images/**/*"],
   content: ["source/index.html"]
 };
+
+gulp.task('doc', function (cb) {
+  gulp.src(['./source/**/*.js'], {read: false})
+      .pipe(jsdoc(cb));
+});
 
 // Compress css files and outputs them to build/css/*.css
 gulp.task("styles", function() {
@@ -87,5 +93,5 @@ gulp.task(
 
 gulp.task(
   "build",
-  gulp.parallel("json", "styles", "scripts", "content", "images")
+  gulp.parallel("json", "styles", "scripts", "content", "doc", "images")
 )

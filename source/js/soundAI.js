@@ -1,7 +1,6 @@
 
 window.onload = function() {
   /** Call the voice Assistant Library
-   *  
    * @param  {function} artyom.fatality this will get the library
    * @param  {function} artyom.initialize this is init the object
    */
@@ -28,8 +27,10 @@ window.onload = function() {
   var artyom = new Artyom();
   startContinuousArtyom();
   
-  /** mapCommand to function and map functions to DOM elements
-   * @param {function} commandHello
+  /** 
+   * @param {map} speechCommands mapCommand to function and map functions to DOM elements
+   * @param {key} speechCommands[indexes] list of valid entries for action
+   * @param {key} speechCommands[action] map action to DOM element and get player/comptuer move
    */
   // Add a single command
   var speechCommands = {
@@ -60,6 +61,7 @@ window.onload = function() {
 }
 
 /** Judge player and computer move and keep track of score accordingly
+ * @function
  * @param  {} computer the computer's move
  * @param  {} player the player's move
  */
