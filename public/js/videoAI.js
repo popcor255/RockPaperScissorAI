@@ -1,7 +1,8 @@
 // Classifier Variable
 var classifier;
 // Model URL
-var imageModelURL = 'https://teachablemachine.withgoogle.com/models/H5UH_cjV/';
+var imageModelURL = 'https://teachablemachine.withgoogle.com/models/3R3d1DBn/';
+//var imageModelURL = 'https://teachablemachine.withgoogle.com/models/H5UH_cjV/';
 
 // Video
 var video;

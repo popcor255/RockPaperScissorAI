@@ -1,6 +1,10 @@
 
 window.onload = function() {
-
+  /** Call the voice Assistant Library
+   *  
+   * @param  {function} artyom.fatality this will get the library
+   * @param  {function} artyom.initialize this is init the object
+   */
   function startContinuousArtyom(){
     artyom.fatality();// use this to stop any of
 
@@ -16,14 +20,21 @@ window.onload = function() {
         });
     },250);
   }
+  
+  /** Artyom instance
+   * @param {Object} Artyom This is the main object that is referenced globally bt most scripts
+   */
 
   var artyom = new Artyom();
   startContinuousArtyom();
-
+  
+  /** mapCommand to function and map functions to DOM elements
+   * @param {function} commandHello
+   */
   // Add a single command
-  var commandHello = {
+  var speechCommands = {
       indexes:["rock paper scissors shoot", "rock paper scissors shoot"], // These spoken words will trigger the execution of the command
-      action:function(){ // Action to be executed when a index match with spoken word
+      action: function(){ // Action to be executed when a index match with spoken word
         var computer_label = document.getElementById("computer_move");
         //label variable from videoAI.js
         var computer_move = randomMove();
@@ -45,8 +56,13 @@ window.onload = function() {
       }
   };
 
-  artyom.addCommands(commandHello);
+  artyom.addCommands(speechCommands);
 }
+
+/** Judge player and computer move and keep track of score accordingly
+ * @param  {} computer the computer's move
+ * @param  {} player the player's move
+ */
 
 function judge(computer, player){
 
