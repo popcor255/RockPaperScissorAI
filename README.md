@@ -1,4 +1,5 @@
 # Rock Paper Scissors Shoot! 
+[![Build Status](https://travis-ci.com/popcor255/RockPaperScissorAI.svg?branch=master)](https://travis-ci.com/popcor255/RockPaperScissorAI)
 
 Hi! This is a game that allows you to play rock paper scissors shoot with the computer through image and audio renegotiation. This is how to start in 5 easy steps. :)
 
